@@ -3,6 +3,8 @@ import './App.css';
 
 class App extends Component {
   render() {
+
+    //It looks like HTML but is JSX code.
     /*
     return (
       <div className="App">
@@ -10,7 +12,9 @@ class App extends Component {
       </div> 
     );
     */
-   return React.createElement('div', null, 'h1' , 'Hi I am a React App');
+
+  /* Understanding JSX - Our code will be converted into that*/
+   return React.createElement('div', null, React.createElement('h1', {className: 'App'} , 'Do this work now?'));
   }
 }
 
