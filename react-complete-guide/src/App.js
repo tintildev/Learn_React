@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Person from './Person/Person'
 
 class App extends Component {
   render() {
@@ -9,7 +10,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <p>I need a root element</p>
+        <p>This is really working!</p>
+        <Person />
+        <Person />
+        <Person />
       </div> 
     );
     
