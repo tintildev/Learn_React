@@ -2,7 +2,13 @@ import React from 'react'
 
 const person = (props) => {
     //JS Code in JSX
-    return <p>I'm {props.name} and I am {props.age}!</p>
+    return (
+        <div>
+            <p>I'm {props.name} and I am {props.age}!</p>
+            <p>{props.children}</p>
+        </div>
+    )
+    
 };
 
 export default person
