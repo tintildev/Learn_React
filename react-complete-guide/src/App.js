@@ -9,14 +9,22 @@ class App extends Component {
 
   state = {
     persons: [
-      {name: 'Max', age: 28},
-      {name: 'Martin', age: 32},
-      {name: 'Lisa', age: 31},
-    ]
+      { name: 'Max', age: 28 },
+      { name: 'Martin', age: 32 },
+      { name: 'Lisa', age: 31 }
+    ],
+    otherState: 'Other value'
   }
 
   switchStateHandler = () => {
-    console.log("Hello World!")
+    // DON'T DO THIS: this.state.persons[0].name = 'Maximilian';
+    this.setState( {
+      persons: [
+        { name: 'Maximilian', age: 28},
+        { name: 'Martin', age: 32},
+        { name: 'Lisa', age: 30}
+      ]
+    })
   }
 
   render() {
