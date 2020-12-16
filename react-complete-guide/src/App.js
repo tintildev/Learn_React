@@ -27,6 +27,16 @@ class App extends Component {
     })
   }
 
+  nameChangeHandler = (event) => {
+    this.setState( {
+      persons: [
+        { name: 'Max', age: 28},
+        { name: event.target.value, age: 29},
+        { name: 'Lisa', age: 26}
+      ]
+    })
+  }
+
   render() {
     //It looks like HTML but is JSX code.
     return (
@@ -39,7 +49,10 @@ class App extends Component {
         <Person name= {this.state.persons[1].name} 
                 age= {this.state.persons[1].age}
                 /* Passing Method References Between Components */
-                click={this.switchStateHandler.bind(this, 'Martin!')} >My Hobbies: Coding</Person>
+                click={this.switchStateHandler.bind(this, 'Martin!')}
+                /* onChange */
+                changed={this.nameChangeHandler}
+                >My Hobbies: Coding</Person>
         <Person name= {this.state.persons[2].name} 
                 age= {this.state.persons[2].age}/>
       </div> 
