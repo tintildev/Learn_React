@@ -60,7 +60,7 @@ class App extends Component {
         <p>This is really working!</p>
         <button 
         style={style}
-        onClick={this.togglePersonsHandler}>Switch Name</button>
+        onClick={this.togglePersonsHandler}>Toggle Persons</button>
         
         {//IF -this.state.showPersons === true ? React.createElement()
         this.state.showPersons ? 
