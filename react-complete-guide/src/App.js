@@ -56,19 +56,15 @@ class App extends Component {
     //JS Way for dynamic content
     let persons = null;
     if(this.state.showPersons) {
+      
+      // Outputting Lists   
       persons = (
         <div>
-          <Person name= {this.state.persons[0].name}
-                  age= {this.state.persons[0].age} />
-          <Person name= {this.state.persons[1].name} 
-                  age= {this.state.persons[1].age}
-                  /* Passing Method References Between Components */
-                  click={this.switchStateHandler.bind(this, 'Martin!')}
-                  /* onChange */
-                  changed={this.nameChangeHandler}
-                  >My Hobbies: Coding</Person>
-          <Person name= {this.state.persons[2].name} 
-                  age= {this.state.persons[2].age}/>
+          {this.state.persons.map(person => {
+            return<Person
+              name={person.name}
+              age ={person.age} />
+          })}
          </div> 
       )
     }
