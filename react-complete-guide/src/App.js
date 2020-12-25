@@ -42,14 +42,29 @@ class App extends Component {
 
 
   nameChangeHandler = (event, id) => {
+    //return index of state Array
     const personIndex = this.state.persons.findIndex(p => {
         return p.id === id;
       }
     );
     
+    //temp person what we want to edit
     const person = {
       ...this.state.persons[personIndex]
     };
+
+    //edit person
+    person.name = event.target.value;
+    
+    //temp array from state
+    const persons = [...this.state.persons];
+
+    //update array
+    persons[personIndex] = person;
+
+    //update state
+    this.setState({persons: persons})
+
 
   }
 
