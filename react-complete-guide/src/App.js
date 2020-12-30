@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import style from './App.module.css';
 import './App.css';
-import Radium, { StyleRoot } from 'radium';
 import Person from './Person/Person'
 
 class App extends Component {
@@ -17,19 +17,6 @@ class App extends Component {
     otherState: 'Other value',
     showPersons: false
   }
-
-  /* No longer needed
-  switchStateHandler = (newName) => {
-    // DON'T DO THIS: this.state.persons[0].name = 'Maximilian';
-    this.setState( {
-      persons: [
-        { name: newName, age: 28},
-        { name: 'Martin', age: 32},
-        { name: 'Lisa', age: 30}
-      ]
-    })
-  }
-  */
 
   //Delet Event Listener
  deletePersonsHandler = (personIndex) => {
@@ -76,19 +63,6 @@ class App extends Component {
   }
 
   render() {
-    const style= {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherhit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
-    }
-
     //JS Way for dynamic content
     let persons = null;
     if(this.state.showPersons) {
@@ -106,12 +80,13 @@ class App extends Component {
           })}
          </div> 
       );
-
+          /*
       style.backgroundColor = 'red';
       style[':hover'] = {
         backgroundColor: 'salmon',
         color: 'black'
       }
+      */
     }
 
    
@@ -125,25 +100,16 @@ class App extends Component {
 
     //It looks like HTML but is JSX code.
     return (
-      <StyleRoot>
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working!</p>
-        <button 
-        style={style}
-        onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <button className={style.button} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         
         {persons}
 
       </div> 
-      </StyleRoot>
     );
-    
-
-  /* Understanding JSX - Our code will be converted into that
-   return React.createElement('div', null, React.createElement('h1', {className: 'App'} , 'Do this work now?'));
-  */
   }
 }
 
-export default Radium(App);
+export default App;
