@@ -63,6 +63,8 @@ class App extends Component {
   }
 
   render() {
+    let btnClass = style.button;
+
     //JS Way for dynamic content
     let persons = null;
     if(this.state.showPersons) {
@@ -80,13 +82,9 @@ class App extends Component {
           })}
          </div> 
       );
-          /*
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
-      */
+      //dynamic button
+      btnClass = style.buttonRed;
+    
     }
 
    
@@ -103,7 +101,7 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working!</p>
-        <button className={style.button} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         
         {persons}
 

@@ -11,3 +11,17 @@
   background-color: lightgreen;
   color: black;
 }
+
+.buttonRed {
+  background-color: red;
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.buttonRed:hover{
+  background-color: salmon;
+  color: black;
+}
