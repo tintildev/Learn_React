@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './App.module.css';
 import './App.css';
-import Person from './Person/Person'
+import Persons from '../components/Persons/Persons'
 
 class App extends Component {
   /*State - React components has a built-in state object. 
@@ -72,14 +72,10 @@ class App extends Component {
       // Outputting Lists   
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {
-            return<Person
-              click={() => this.deletePersonsHandler(index)}
-              name={person.name}
-              age ={person.age} 
-              key={person.id}
-              changed= {(event) => this.nameChangeHandler(event, person.id)} />
-          })}
+          <Persons
+            persons={this.state.persons}
+            clicked={this.deletePersonsHandler}
+            changed={this.nameChangeHandler} />
          </div> 
       );
       //dynamic button
