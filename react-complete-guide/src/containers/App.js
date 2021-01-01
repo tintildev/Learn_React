@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import style from './App.module.css';
 import './App.css';
-import Persons from '../components/Persons/Persons'
+import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   /*State - React components has a built-in state object. 
@@ -63,44 +63,25 @@ class App extends Component {
   }
 
   render() {
-    let btnClass = style.button;
 
     //JS Way for dynamic content
     let persons = null;
     if(this.state.showPersons) {
       
       // Outputting Persons with List of Person   
-      persons = (
-        <div>
-          <Persons
+      persons = <Persons
             persons={this.state.persons}
             clicked={this.deletePersonsHandler}
-            changed={this.nameChangeHandler} />
-         </div> 
-      );
-      //dynamic button
-      btnClass = style.buttonRed;
-    
+            changed={this.nameChangeHandler} />;
     }
 
-   
-    const classes = [];
-    if (this.state.persons.length <= 2){
-      classes.push('red'); // classes = ['red']
-    }
-    if (this.state.persons.length <= 1){
-      classes.push('bold'); // classes = ['red', 'bold']
-    }
-
-    //It looks like HTML but is JSX code.
     return (
-      <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        <p className={classes.join(' ')}>This is really working!</p>
-        <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
-        
+      <div className="App">  
+        <Cockpit 
+          showPersons={this.state.showPersons}
+          persons={this.state.persons} 
+          clicked={this.togglePersonsHandler}/>
         {persons}
-
       </div> 
     );
   }
