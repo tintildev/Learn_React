@@ -69,7 +69,7 @@ class App extends Component {
     let persons = null;
     if(this.state.showPersons) {
       
-      // Outputting Lists   
+      // Outputting Persons with List of Person   
       persons = (
         <div>
           <Persons
