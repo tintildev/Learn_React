@@ -1,0 +1,26 @@
+.header {
+    background-color: var(--color-grey-dark-1);
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(var(--color-secondary-light), 
+                        var(--color-secondary-light)), 
+                        url(../img/Hero.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 8rem;
+    padding-top: 4rem;
+
+    display: grid;
+    grid-template-rows: minmax(20rem, min-content) repeat(8, min-content) ;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-row-gap: 1.5rem;
+    justify-content: center;
+
+    @media only screen and (max-width: var(--bp-medium)){
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: var(--bp-small)){
+       padding: 5rem;
+    }
+}
+
