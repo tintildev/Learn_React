@@ -1,4 +1,33 @@
 .footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-column: full-start / full-end;
     background-color: var(--color-grey-footer);
+    color: var(--color-white);
+    font-size: var(--default-font-size);
+}
+
+.footer__LogoImg{
+    height: 60px;
+    width: auto;
+}
+
+.footer__logo-box{
+    margin: 1rem;
+}
+
+.footer__links{
+    margin: 1rem;
+    
+}
+
+.fa{
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: var(--default-font-size);
+    margin: 1rem;
+}
+
+.footer__copyright{
+    margin: 1rem;
 }
