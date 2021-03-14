@@ -1,12 +1,15 @@
 import './App.css';
-import TodoList from './components/TodoList'
+import TodoList from './components/TodoList';
 import React, { useState, useRef, Component} from 'react';
+import {v4 as uuid} from 'uuid';
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   {/*  So that we can access the input field, we need useRef() */}
   const todoNameRef = useRef();
+
+  
 
   {/*Save the new state */}
   function handleAddTodo(e) {
@@ -19,7 +22,7 @@ function App() {
 
       {/* Sets a new state with all old entries */}
       setTodos(prevTodos => {
-        return [...prevTodos, { id:1, name: name, complete: false}]
+        return [...prevTodos, { id: uuid(), name: name, complete: false}]
       })
 
        {/* Clears the input field */}
