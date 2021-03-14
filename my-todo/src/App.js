@@ -45,6 +45,12 @@ function App() {
     todo.complete =!todo.complete;
     setTodos(newTodos);
   }
+
+  {/* Cleare */}
+  function handleCleareTodo() {
+    const newTodos = todos.filter(todos => !todos.complete);
+    setTodos(newTodos);
+  }
   return (
     <div className="App">
       {/* Returns a list of tasks. */}
@@ -55,7 +61,7 @@ function App() {
 
       {/*Save the new state event */}
       <button onClick={handleAddTodo}>Add Todo</button>
-      <button>Cleare Complete</button>
+      <button onClick={handleCleareTodo}>Cleare Complete</button>
       <div>{todos.filter(todo => !todo.complete).length} left to do</div>
     </div>
   );
