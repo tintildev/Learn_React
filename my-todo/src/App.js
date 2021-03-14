@@ -38,10 +38,17 @@ function App() {
       todoNameRef.current.value = null;
   }
 
+  {/* checkbox */}
+  function toggleTodo(id) {
+    const newTodos = [...todos];
+    const todo = newTodos.find(todo => todo.id === id);
+    todo.complete =!todo.complete;
+    setTodos(newTodos);
+  }
   return (
     <div className="App">
       {/* Returns a list of tasks. */}
-      <TodoList todoList={todos} />
+      <TodoList todoList={todos} toggleTodo={toggleTodo} />
 
        {/*  So that we can access the input field, we need useRef() */}
       <input ref={todoNameRef} type="text" />
@@ -49,6 +56,7 @@ function App() {
       {/*Save the new state event */}
       <button onClick={handleAddTodo}>Add Todo</button>
       <button>Cleare Complete</button>
+      <div>{todos.filter(todo => !todo.complete).length} left to do</div>
     </div>
   );
 }
