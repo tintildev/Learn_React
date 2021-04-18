@@ -34,7 +34,7 @@ class TodoAdd extends Component {
                     value={this.state.newTodo}
                     className="inputField"
                 />
-                <button onClick={this.onTodoAdd} >Todo hinzufügen</button>
+                <button className="TodoAdd__btn" onClick={this.onTodoAdd} >+</button>
             </Panel>
         )
     }
