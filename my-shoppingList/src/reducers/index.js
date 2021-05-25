@@ -10,7 +10,7 @@ let initialState = {
 }
 
 // Counter
-function counter(state = initialState, action) {
+function counter(state, action) {
     if (action.type == "INCREMENT") {
         return {
             counter: state + 1
@@ -26,7 +26,7 @@ function todos (state, action) {
 }
 
 // total state
-function reduce (state = intialState, action) {
+function reduce (state = initialState, action) {
     return {
         counter: counter(state.counter, action),
         todos: todos(state.todos, action)
