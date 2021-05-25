@@ -8,6 +8,7 @@ class TodoList extends Component {
             <ul>
                 {this.props.todos.map((todo) => {
                     return (
+                        // Key is required to correct errors
                         <li key={todo.id}>{todo.title}</li>
                     )
                 })}
