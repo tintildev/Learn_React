@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Counter">
-          <h1>Counter: {this.props.value}</h1>
+          <h2>Counter: {this.props.value}</h2>
           <button className="Counter__btn" onClick={this.props.onIncrement}>Click</button>
         </div>
       </div>

@@ -14,7 +14,7 @@ console.log(store.getState());
 ReactDOM.render(
   //Connect to Store with Provider
   <Provider store={store}>
-    <div>
+    <div className="Shoppinglist__Div">
       <App />
       <TodoList />
     </div>

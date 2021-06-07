@@ -5,14 +5,17 @@ import { connect } from 'react-redux';
 class TodoList extends Component {
     render() {
         return (
-            <ul>
-                {this.props.todos.map((todo) => {
-                    return (
-                        // Key is required to correct errors
-                        <li key={todo.id}>{todo.title}</li>
-                    )
-                })}
-            </ul>
+            <div className="TodoList">
+                <h2>Todos: </h2>
+                <ul>
+                    {this.props.todos.map((todo) => {
+                        return (
+                            // Key is required to correct errors
+                            <li key={todo.id}>{todo.title}</li>
+                        )
+                    })}
+                </ul>
+            </div>
         )
     }
 }

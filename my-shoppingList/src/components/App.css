@@ -1,8 +1,28 @@
-.App {
-  text-align: center;
+/*
+Text: #f9f7f7
+Text-Dark: #dbe2ef
+
+Background: #3f72af
+Background-Dark: #112d4e
+
+*/
+
+.Shoppinglist__Div{
   display: flex;
   align-items: center; 
-  justify-content: center
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App {
+  text-align: center;
+  background-color: #3f72af;
+  width: 80vw;
+  height: 7rem;
+  margin: 2rem 5rem;
+  color: #f9f7f7;
+  box-shadow: 5px 5px 5px #112d4e;
+  
 }
 
 .App-todo li {
@@ -10,17 +30,25 @@
 }
 
 .Counter {
-  background-color: #ff75a0;
-  width: 80vw;
-  height: 25vh;
-  margin: 5rem;
-  color: #eaffd0;
+  
 }
 
 .Counter__btn {
-  background-color: #fce38a;
-  color: black;
+  background-color: #112d4e;
+  color: #f9f7f7;
   border: 1px solid black;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 5px 5px 5px #112d4e;
   width: 10rem;
+}
+
+.TodoList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #3f72af;
+  width: 80vw;
+  margin: 0 5rem;
+  color: #f9f7f7;
+  box-shadow: 5px 5px 5px #112d4e;
 }
