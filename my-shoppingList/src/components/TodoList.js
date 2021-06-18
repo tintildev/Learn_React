@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { incrementCounter } from '../actions/index';
+import { incrementCounter, addTodo } from '../actions/actions';
 import { connect } from 'react-redux';
 
 class TodoList extends Component {
@@ -15,20 +15,29 @@ class TodoList extends Component {
                         )
                     })}
                 </ul>
+                <button onClick={() => this.props.addTodo("3. Test Todo") 
+                // Anonymous function so that code is only executed when clicked
+                }>
+                    Todo hinzufügen
+                </button>
             </div>
         )
     }
 }
-
+// Saves the central status
 let mapStateToProps = (state) => {
     return {
         todos: state.todos
     }
 }
 
-let mapDispatchToProps = {}
+// run action addTodo
+let mapDispatchToProps = {
+    addTodo: addTodo
+}
 
-let TodoListContainer = 
-    connect(mapStateToProps, mapDispatchToProps)(TodoList);
+// Connect with Redux
+let TodoListContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
 
 export default TodoListContainer;

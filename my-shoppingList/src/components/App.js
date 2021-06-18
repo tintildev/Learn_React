@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { incrementCounter } from '../actions/index';
+import { incrementCounter } from '../actions/actions';
 import { connect } from 'react-redux';
 import './App.css';
 
@@ -13,7 +13,8 @@ class App extends Component {
       <div className="App">
         <div className="Counter">
           <h2>Counter: {this.props.value}</h2>
-          <button className="Counter__btn" onClick={this.props.onIncrement}>Click</button>
+          <button className="Counter__btn" onClick={this.props.onIncrement}>+1</button>
+          
         </div>
       </div>
     );
