@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { incrementCounter, addTodo } from '../actions/actions';
 import { connect } from 'react-redux';
+import TodoAdd from './TodoAdd';
 
 class TodoList extends Component {
     render() {
@@ -15,11 +16,10 @@ class TodoList extends Component {
                         )
                     })}
                 </ul>
-                <button onClick={() => this.props.addTodo("3. Test Todo") 
-                // Anonymous function so that code is only executed when clicked
-                }>
-                    Todo hinzufügen
-                </button>
+                <TodoAdd onAdd={(title) => {this.props.addTodo(title)}}/>
+                <br></br>
+                
+                
             </div>
         )
     }
