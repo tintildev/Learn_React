@@ -9,12 +9,6 @@ function todos (state = initialState, action) {
 
     // Add Action
     if (action.type == "TODO_ADD") {
-
-        //New List
-        let newState = []
-        for (let todo of state) {
-            newState.push(todo);
-        }
         //automatic id
         let maxTodoID = 0;
         for (let todo of state){
@@ -23,8 +17,8 @@ function todos (state = initialState, action) {
             }
         }
         // add new Todo
-        newState.push({id: maxTodoID + 1, title: action.title})
-        return newState;
+        return [].concat(state, [{id: maxTodoID + 1, title: action.title}]);
+        //The concat () method merges two or more arrays into one. The method does not change the existing arrays, but instead returns a new array.
     }
     return state;
 }
