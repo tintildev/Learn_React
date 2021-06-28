@@ -5,9 +5,9 @@ class Panel extends Component {
     render() {
         return (
             <div className="Panel">
-                <h4 className="Panel-title">
+                <h1 className="Panel-title">
                     {this.props.title}
-                </h4>
+                </h1>
                 <div className="Panel-content">
                     {this.props.children}
                 </div>

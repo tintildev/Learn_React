@@ -7,7 +7,7 @@ Background-Dark: #112d4e
 
 */
 
-.Shoppinglist__Div{
+.Panel{
   display: flex;
   align-items: center; 
   justify-content: center;
