@@ -11,6 +11,7 @@ import Home from './components/Home';
 import App from './components/App';
 import counter from './reducers/index';
 import TodoList from './components/TodoList';
+import Navigation from './components/Navigation';
 
 let store = createStore(counter);
 console.log(store.getState());
@@ -21,6 +22,7 @@ ReactDOM.render(
 
     <HashRouter>
       <div>
+        <Navigation></Navigation>
         <Route exact={true} path="/" component={Home} />
         <Route path="/click" component={App} />
         <Route path="/todolist" component={TodoList} />

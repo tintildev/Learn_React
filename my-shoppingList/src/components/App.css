@@ -52,3 +52,23 @@ Background-Dark: #112d4e
   color: #f9f7f7;
   box-shadow: 5px 5px 5px #112d4e;
 }
+
+.Navigation {
+  background-color: #3f72af;
+  text-align: center;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #112d4e;
+  margin-bottom: 2rem;
+
+}
+
+.Navigation li {
+  display: inline;
+  padding: 1rem;
+}
+
+.Navigation__link a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
