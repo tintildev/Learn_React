@@ -10,6 +10,7 @@ class Navigation extends Component {
                     <li className="Navigation__link"><Link to="/">Startseite</Link></li>
                     <li className="Navigation__link"><Link to="/todolist">Todos ({this.props.todosLength})</Link></li>
                     <li className="Navigation__link"><Link to="/click">Klickzähler ({this.props.counter})</Link></li>
+                    <li className="Navigation__link"><Link to="/wikipedia">Wikipedia</Link></li>
                 </ul>
             </div>
         )

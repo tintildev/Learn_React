@@ -12,6 +12,7 @@ import App from './components/App';
 import counter from './reducers/index';
 import TodoList from './components/TodoList';
 import Navigation from './components/Navigation';
+import Wikipedia from './components/Wikipedia';
 
 let store = createStore(counter);
 console.log(store.getState());
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Route exact={true} path="/" component={Home} />
         <Route path="/click" component={App} />
         <Route path="/todolist" component={TodoList} />
+        <Route path="/wikipedia" component={Wikipedia} />
       </div>
     </HashRouter>
 
