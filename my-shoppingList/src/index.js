@@ -8,7 +8,7 @@ import './index.css';
 import { HashRouter, Route } from 'react-router-dom';
 
 import Home from './components/Home';
-import App from './components/App';
+import Counter from './components/App';
 import counter from './reducers/index';
 import TodoList from './components/TodoList';
 import Navigation from './components/Navigation';
@@ -25,7 +25,7 @@ ReactDOM.render(
       <div>
         <Navigation></Navigation>
         <Route exact={true} path="/" component={Home} />
-        <Route path="/click" component={App} />
+        <Route path="/click" component={Counter} />
         <Route path="/todolist" component={TodoList} />
         <Route path="/wikipedia" component={Wikipedia} />
       </div>
