@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 
 class Wikipedia extends Component {
 
@@ -6,7 +7,8 @@ class Wikipedia extends Component {
         super(props);
 
         this .state = {
-            searchText: ""
+            searchText: "",
+            searchButtonClicked: false
         }
 
         this.onTextChange = this.onTextChange.bind(this);
@@ -20,7 +22,9 @@ class Wikipedia extends Component {
     }
 
     onSearchSubmit() {
-
+        this.setState({
+            searchButtonClicked: true
+        })
     }
 
     render() {
@@ -34,6 +38,10 @@ class Wikipedia extends Component {
                 />
 
                 <button onClick={this.onSearchSubmit}>Wikipedia durchsuchen</button>
+
+                {(this.state.searchButtonClicked == true ? (
+                    <Redirect to={"/wikipedia-results/" + this.state.searchText} />
+                ): null)}
             </div>
             
         )

@@ -73,3 +73,7 @@ Background-Dark: #112d4e
   text-transform: uppercase;
   color: white;
 }
+
+.WikipediaSearch{
+  padding: 1rem;
+}
