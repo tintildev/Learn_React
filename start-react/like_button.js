@@ -1,5 +1,3 @@
-//https://de.reactjs.org/docs/add-react-to-a-website.html#optional-try-react-with-jsx
-
 'use strict';
 
 const e = React.createElement;
@@ -25,5 +23,6 @@ class LikeButton extends React.Component {
 
 // ... Der Start Code, den du gerade eingefügt hast ...
 
-const domContainer = document.querySelector('#footer');
+const domContainer = document.querySelector('#Button');
 ReactDOM.render(e(LikeButton), domContainer);
+root.render(e(LikeButton))
