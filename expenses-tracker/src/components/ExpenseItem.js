@@ -1,15 +1,18 @@
-import './sass/component/expenseItem.scss'
+import './sass/component/expenseItem.scss';
+import ExpenseDate from './ExpenseDate';
+import Card from './Card';
 
 function ExpenseItem(props) {
-  
+
+
   return (
-    <div class="expense-item">
-      <div class="expense-item__date">{props.date.toISOString()}</div>
-      <div class="expense-item__description">
+    <Card className="expense-item">
+      <ExpenseDate date={props.date}></ExpenseDate> 
+      <div className="expense-item__description">
         <h2>{props.title}</h2>
       </div>
-      <div class="expense-item__price">{props.amount} €</div>
-    </div>
+      <div className="expense-item__price">{props.amount} €</div>
+    </Card>
   );
 }
 
