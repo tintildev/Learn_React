@@ -1,6 +1,6 @@
-import './sass/component/expenseItem.scss';
+import '../sass/component/expenseItem.scss';
 import ExpenseDate from './ExpenseDate';
-import Card from './Card';
+import Card from '../UI/Card';
 
 function ExpenseItem(props) {
 

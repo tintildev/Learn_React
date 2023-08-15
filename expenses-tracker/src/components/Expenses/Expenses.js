@@ -1,5 +1,5 @@
-import "./sass/component/expense.scss";
-import Card from "./Card";
+import "../sass/component/expense.scss";
+import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
 
 function Expenses() {

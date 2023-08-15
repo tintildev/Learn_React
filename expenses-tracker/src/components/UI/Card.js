@@ -1,4 +1,4 @@
-import "./sass/component/card.scss";
+import "../sass/component/card.scss";
 
 function Card(props){
     const classes = 'card ' + props.className;
