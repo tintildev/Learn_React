@@ -54,7 +54,15 @@ body {
 
   &__Boxes {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: auto;
+
+    @media only screen and (min-width: 50em){
+        flex-direction: row;  
+    }
   }
 }
 

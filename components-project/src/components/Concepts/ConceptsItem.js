@@ -5,7 +5,7 @@ function ConceptsItem(props) {
 
   return (
     <div className={classes}>
-      <h1 className="item__title">{props.title}</h1>
+      <h2 className="item__title">{props.title}</h2>
       <p className="item__text">{props.text}</p>
     </div>
   );
