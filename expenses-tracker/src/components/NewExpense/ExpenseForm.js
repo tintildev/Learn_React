@@ -6,6 +6,12 @@ const ExpenseForm = () => {
   const[amount, setAmount] = useState('');
   const[date, setDate] = useState('');
 
+  const[userInput, setUserInput] = useState ({
+    title: '',
+    amount: '',
+    date: ''
+  })
+
   const titleChangeHandler = (event) =>{
     setTitle(event.target.value);
     console.log(title);
@@ -13,12 +19,12 @@ const ExpenseForm = () => {
 
   const amountChangeHandler = (event) =>{
     setAmount(event.target.value);
-    console.log(title);
+    console.log(amount);
   }
 
   const dateChangeHandler = (event) =>{
     setDate(event.target.value);
-    console.log(title);
+    console.log(date);
   }
 
 
