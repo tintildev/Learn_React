@@ -1,4 +1,5 @@
 import "./App.css";
+import "./components/sass/base/base.scss";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
