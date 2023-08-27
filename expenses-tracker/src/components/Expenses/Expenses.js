@@ -1,14 +1,24 @@
 import "../sass/component/expense.scss";
 import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
+import ExpenseFilter from "../ExpensesFilter/ExpenseFilter";
+import React, { useState } from "react";
 
 function Expenses(props) {
+  const [selectedData, setSelectedData] = useState("");
+
   const expensesArray = {
-    ...props.items
-  }
+    ...props.items,
+  };
+
+  const onSelectFilterData = (eventData) => {
+    setSelectedData(eventData);
+    console.log(selectedData);
+  };
 
   return (
     <Card className="expenses">
+      <ExpenseFilter filterData={onSelectFilterData} />
       <ExpenseItem
         title={expensesArray[0].title}
         amount={expensesArray[0].amount}
