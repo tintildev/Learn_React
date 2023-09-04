@@ -2,6 +2,8 @@ import '../sass/component/expenseItem.scss';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
+import React from 'react';
+
 function ExpenseItem(props) {
 
 

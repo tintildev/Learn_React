@@ -5,10 +5,10 @@ function ExpenseDate(props) {
   const year = props.date.toLocaleString("en-US", { year: "numeric" });
   const day = props.date.toLocaleString("en-US", { day: "numeric" });
   return (
-    <div class="expense-item__date">
-      <div class="date__year">{year}</div>
-      <div class="date__month">{month}</div>
-      <div class="date__day">{day}</div>
+    <div className="expense-item__date">
+      <div className="date__year">{year}</div>
+      <div className="date__month">{month}</div>
+      <div className="date__day">{day}</div>
     </div>
   );
 }
