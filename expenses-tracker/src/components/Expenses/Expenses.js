@@ -9,9 +9,9 @@ function Expenses(props) {
   const [selectedData, setSelectedData] = useState("");
 
   // Filter Expenses
-  const filterExpensesArray = props.items.filter(expenses =>{
+  const filterExpensesArray = props.items.filter((expenses) => {
     return expenses.date.getFullYear().toString() === selectedData;
-  })
+  });
 
   // Change Methode Selected Date and write into State
   const onSelectFilterData = (eventData) => {
@@ -19,19 +19,22 @@ function Expenses(props) {
     console.log(selectedData);
   };
 
-
-
   return (
     <Card className="expenses">
       <ExpenseFilter filterData={onSelectFilterData} />
-      {filterExpensesArray.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
+
+      {filterExpensesArray.length === 0 ? (
+        <p>No expense found.</p>
+      ) : (
+        filterExpensesArray.map((expense) => (
+          <ExpenseItem
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        ))
+      )}
     </Card>
   );
 }
