@@ -19,22 +19,22 @@ function Expenses(props) {
     console.log(selectedData);
   };
 
-  return (
-    <Card className="expenses">
-      <ExpenseFilter filterData={onSelectFilterData} />
-
-      {filterExpensesArray.length === 0 ? (
-        <p>No expense found.</p>
-      ) : (
-        filterExpensesArray.map((expense) => (
+  //Conditional Content if data is available
+  let expensesContent = <p>No expense found.</p>;
+  if (filterExpensesArray.length > 0){
+    expensesContent = filterExpensesArray.map((expense) => (
           <ExpenseItem
             key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
-          />
-        ))
-      )}
+          />))
+  }
+
+  return (
+    <Card className="expenses">
+      <ExpenseFilter filterData={onSelectFilterData} />
+      {expensesContent}
     </Card>
   );
 }
