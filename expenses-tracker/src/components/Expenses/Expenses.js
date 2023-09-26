@@ -2,6 +2,7 @@ import "../sass/component/expense.scss";
 import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "../ExpensesFilter/ExpenseFilter";
+import ExpensesList from "./ExpensesList";
 import React, { useState } from "react";
 
 // State Selected Date
@@ -19,22 +20,12 @@ function Expenses(props) {
     console.log(selectedData);
   };
 
-  //Conditional Content if data is available
-  let expensesContent = <p>No expense found.</p>;
-  if (filterExpensesArray.length > 0){
-    expensesContent = filterExpensesArray.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />))
-  }
+  
 
   return (
     <Card className="expenses">
       <ExpenseFilter filterData={onSelectFilterData} />
-      {expensesContent}
+      <ExpensesList items={filterExpensesArray}/>
     </Card>
   );
 }
