@@ -1,10 +1,10 @@
 import React from "react";
-import "../sass/component/ExpenseFilterxpense.scss";
+import "../sass/component/ExpensesList.scss";
 import ExpenseItem from "./ExpenseItem";
 
 const ExpensesList = (props) => {
   //Conditional return Content if data is available, or not.
-  if (props.item.length === 0) {
+  if (props.items.length === 0) {
     return (
       <h2 className="expenses-list__fallback">Found no expenses</h2>
     )
@@ -12,7 +12,7 @@ const ExpensesList = (props) => {
 
   return (
     <ul className="expenses-list">
-      {props.item.map((expense) => (
+      {props.items.map((expense) => (
         <ExpenseItem
           key={expense.id}
           title={expense.title}

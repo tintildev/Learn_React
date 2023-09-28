@@ -20,8 +20,6 @@ function Expenses(props) {
     console.log(selectedData);
   };
 
-  
-
   return (
     <Card className="expenses">
       <ExpenseFilter filterData={onSelectFilterData} />

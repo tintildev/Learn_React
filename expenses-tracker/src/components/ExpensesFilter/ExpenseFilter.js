@@ -1,5 +1,6 @@
 import React from "react";
-import './ExpensesFilter.scss';
+import "../sass/component/ExpensesFilter.scss";
+
 
 const ExpenseFilter = (props) => {
     const onSelectHandler = (event) => {
