@@ -4,6 +4,12 @@ import ChartBar from "./ChartBar";
 import "../sass/component/Chart.scss";
 
 const Chart = (props) => {
+  //Helper Array, Array of Numbers
+  const dataPointValues = props.dataPoints.map(dataPoint => dataPoint.value);
+  //max Ammounts
+  const totalMaximum = Math.max(...dataPointValues);
+
+
   return (
     <div className="chart">
       {
@@ -13,7 +19,7 @@ const Chart = (props) => {
             key={dataPoint.label}
             label={dataPoint.label}
             value={dataPoint.value}
-            maxValue={null}
+            maxValue={totalMaximum}
           />
         ))
       }

@@ -1,29 +1,29 @@
 import "../sass/component/expense.scss";
 import Card from "../UI/Card";
-import ExpenseItem from "./ExpenseItem";
 import ExpenseFilter from "../ExpensesFilter/ExpenseFilter";
 import ExpensesList from "./ExpensesList";
 import React, { useState } from "react";
+import ExpensesChart from "./ExpensesChart";
 
 // State Selected Date
 function Expenses(props) {
-  const [selectedData, setSelectedData] = useState("");
-
-  // Filter Expenses
-  const filterExpensesArray = props.items.filter((expenses) => {
-    return expenses.date.getFullYear().toString() === selectedData;
-  });
+  const [selectedData, setSelectedData] = useState("2020");
 
   // Change Methode Selected Date and write into State
-  const onSelectFilterData = (eventData) => {
+  const onSelectFilterDataHandler = (eventData) => {
     setSelectedData(eventData);
-    console.log(selectedData);
   };
+
+  // Filter Expenses
+  const filterExpensesArray = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === selectedData;
+  });
 
   return (
     <Card className="expenses">
-      <ExpenseFilter filterData={onSelectFilterData} />
-      <ExpensesList items={filterExpensesArray}/>
+      <ExpenseFilter selected={selectedData} filterData={onSelectFilterDataHandler} />
+      <ExpensesChart expenses={filterExpensesArray} />
+      <ExpensesList items={filterExpensesArray} />
     </Card>
   );
 }

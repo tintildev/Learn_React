@@ -7,11 +7,11 @@ import "../sass/component/Chart.scss";
 const ChartBar = (props) => {
 
   //vale of chart fill
-  const chartHight = "0%";
+  let chartHight = "0%";
 
   //height compared to the max
-  if(props.max > 0){
-    chartHight += ((props.height / props.max) * 100) + "%";
+  if(props.maxValue > 0){
+    chartHight = Math.round((props.value / props.maxValue) * 100) + "%";
   }
 
 
@@ -20,7 +20,7 @@ const ChartBar = (props) => {
       <div className="chart-bar__inner">
         <div className="chart-bar__fill" style={{height: chartHight}}></div>
       </div>
-      <div className="chart-bar__label"></div>
+      <div className="chart-bar__label">{props.label}</div>
     </div>
   );
 };
