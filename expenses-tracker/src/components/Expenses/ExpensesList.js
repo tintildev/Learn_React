@@ -17,6 +17,7 @@ const ExpensesList = (props) => {
           key={expense.id}
           title={expense.title}
           amount={expense.amount}
+          tag={expense.tag}
           date={expense.date}
         />
       ))}
