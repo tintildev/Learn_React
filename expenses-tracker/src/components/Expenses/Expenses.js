@@ -18,10 +18,13 @@ function Expenses(props) {
   const filterExpensesArray = props.items.filter((expense) => {
     return expense.date.getFullYear().toString() === selectedData;
   });
+  
+
+
 
   return (
     <Card className="expenses">
-      <ExpenseFilter selected={selectedData} filterData={onSelectFilterDataHandler} />
+      <ExpenseFilter selected={selectedData} filterData={onSelectFilterDataHandler} items={props.items} />
       <ExpensesChart expenses={filterExpensesArray} />
       <ExpensesList items={filterExpensesArray} />
     </Card>

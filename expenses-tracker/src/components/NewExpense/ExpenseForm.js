@@ -4,16 +4,19 @@ import "./NewExpense.scss";
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredTag, setEnteredTag] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-    console.log(enteredTitle);
   };
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-    console.log(enteredAmount);
+  };
+
+  const tagChangeHandler = (event) => {
+    setEnteredTag(event.target.tag);
   };
 
   const dateChangeHandler = (event) => {
@@ -27,6 +30,7 @@ const ExpenseForm = (props) => {
     const expenseData = {
       title: enteredTitle,
       amount: +enteredAmount,
+      tag: enteredTag,
       date: new Date(enteredDate),
     };
 
@@ -34,6 +38,7 @@ const ExpenseForm = (props) => {
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
+    setEnteredTag('');
   };
 
   return (
@@ -45,6 +50,8 @@ const ExpenseForm = (props) => {
             type="text"
             value={enteredTitle}
             onChange={titleChangeHandler}
+            required
+            autofocus
           />
         </div>
         <div className="new-expense__control">
@@ -55,6 +62,16 @@ const ExpenseForm = (props) => {
             step="0.01"
             value={enteredAmount}
             onChange={amountChangeHandler}
+            required
+          />
+        </div>
+        <div className="new-expense__control">
+          <label>Tag</label>
+          <input
+            type="Text"
+            value={enteredTag}
+            onChange={tagChangeHandler}
+            required
           />
         </div>
         <div className="new-expense__control">
@@ -65,8 +82,10 @@ const ExpenseForm = (props) => {
             max="2022-12-31"
             value={enteredDate}
             onChange={dateChangeHandler}
+            required
           />
         </div>
+        
         <div className="new-expense__actions">
           <button type="button" className="new-expense__button" onClick={props.onCancle}>
             Cancle
