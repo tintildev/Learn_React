@@ -2,7 +2,9 @@ import "./App.css";
 import "./components/sass/base/base.scss";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import Footer from "./components/Footer/Footer";
 import React, { useState } from "react";
+
 
 const DUMMY_DATA = [
   {
@@ -100,8 +102,11 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Hello World</h1>
+      <h2>This is my first expense tracker with React.</h2>
       <NewExpense onNewExpenses={addExpenseHandler} />
       <Expenses items={expense}></Expenses>
+      <Footer></Footer>
     </div>
   );
 }
