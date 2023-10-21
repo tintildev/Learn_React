@@ -32,7 +32,7 @@ const NewExpense = (props) => {
 
   return (
     <div className="new-expense">
-      <button className="new-expense__button" onClick={addNewExpensesHandler}>Add new Expenses</button>
+      <button className="new-expense__button" onClick={addNewExpensesHandler}>Add Expenses</button>
     </div>
   );
 };

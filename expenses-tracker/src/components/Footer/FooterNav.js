@@ -1,5 +1,5 @@
 import React from "react";
-import "../sass/component/Footer.scss";
+import "../sass/component/footer.scss";
 import FooterNavItem from "./FooterNavItem";
 
 const FooterNav = (props) => {

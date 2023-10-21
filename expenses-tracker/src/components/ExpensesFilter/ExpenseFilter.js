@@ -17,6 +17,7 @@ const ExpenseFilter = (props) => {
   return (
     <div className="expenses-filter">
       <label>Filter by year</label>
+      <p>Todo: Month</p>
       <select
         value={props.selected}
         className="expenses-filter__control"

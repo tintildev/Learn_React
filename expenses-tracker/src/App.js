@@ -3,6 +3,7 @@ import "./components/sass/base/base.scss";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Footer from "./components/Footer/Footer";
+import Navigation from "./components/Navigation/Naviagtion";
 import React, { useState } from "react";
 
 
@@ -104,6 +105,7 @@ function App() {
     <div className="App">
       <h1>Hello World</h1>
       <h2>This is my first expense tracker with React.</h2>
+      <Navigation></Navigation>
       <NewExpense onNewExpenses={addExpenseHandler} />
       <Expenses items={expense}></Expenses>
       <Footer></Footer>
