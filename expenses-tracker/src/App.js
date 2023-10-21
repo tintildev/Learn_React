@@ -103,9 +103,9 @@ function App() {
 
   return (
     <div className="App">
+      <Navigation></Navigation>
       <h1>Hello World</h1>
       <h2>This is my first expense tracker with React.</h2>
-      <Navigation></Navigation>
       <NewExpense onNewExpenses={addExpenseHandler} />
       <Expenses items={expense}></Expenses>
       <Footer></Footer>
