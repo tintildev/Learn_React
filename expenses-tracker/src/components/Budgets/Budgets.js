@@ -1,11 +1,10 @@
-import Card from "../UI/Card";
 import Budget from "./Budget";
 import "../sass/component/budget.scss";
 
 const Budgets = (props) => {
   return (
     <div>
-      <Card className="card--budget">
+      <div className="divBudget">
         {props.budgets.map((data) => (
           <Budget
             key={data.id}
@@ -15,7 +14,7 @@ const Budgets = (props) => {
             expenses={props.expenses}
           ></Budget>
         ))}
-      </Card>
+      </div>
     </div>
   );
 };

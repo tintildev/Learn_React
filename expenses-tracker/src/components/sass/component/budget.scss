@@ -1,10 +1,20 @@
 .budget{
     border: solid 1px;
     padding: 1rem;
+    box-shadow: 0 3rem 6rem var(--color-black-transparent);
 
     &Values{
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
+}
+
+.divBudget{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 1rem;
 }

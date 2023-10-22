@@ -51,7 +51,7 @@ const ExpenseForm = (props) => {
             value={enteredTitle}
             onChange={titleChangeHandler}
             required
-            autofocus
+            autoFocus
           />
         </div>
         <div className="new-form__control">

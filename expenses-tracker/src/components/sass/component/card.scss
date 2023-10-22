@@ -1,13 +1,4 @@
 .card {
   border-radius: 20px;
   box-shadow: 0 3rem 6rem var(--color-black-transparent);
-
-  &--budget {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    margin: 1rem;
-  }
 }
