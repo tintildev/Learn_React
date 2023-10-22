@@ -2,6 +2,8 @@ import Budget from "./Budget";
 import "../sass/component/budget.scss";
 
 const Budgets = (props) => {
+
+
   return (
     <div>
       <div className="divBudget">
@@ -12,6 +14,7 @@ const Budgets = (props) => {
             amount={data.amount}
             tag={data.tag}
             expenses={props.expenses}
+            show={props.show}
           ></Budget>
         ))}
       </div>

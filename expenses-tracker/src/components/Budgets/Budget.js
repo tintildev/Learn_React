@@ -8,30 +8,38 @@ const Budget = (props) => {
   props.expenses.map((data) => {
     if (props.tag === data.tag) {
       total += data.amount;
-    }if(props.tag === ""){
+    }
+    if (props.tag === "") {
       total += data.amount;
     }
   });
   //height compared to the max
   chartWidth = Math.round((total / props.amount) * 100) + "%";
 
+  const showExpenseHandler = () =>{
+    props.show(props.tag);
+  }
+
   return (
-    <div className="budget">
-      <h3>{props.title}</h3>
-      <div className="budgetValues">
-        <p>Ausgabe: {total}</p>
-        <p>Budget: {props.amount}</p>
-      </div>
-      <div className="chart-bar chart-bar--horizontal">
-        <div className="chart-bar__inner">
-          <div
-            className="chart-bar__fill chart-bar__fill--horizontal"
-            style={{ width: chartWidth }}
-          ></div>
+    
+      <div className="budget">
+        <h3>{props.title}</h3>
+        <div className="budgetValues">
+          <p>Ausgabe: {total}</p>
+          <p>Budget: {props.amount}</p>
         </div>
+        <div className="chart-bar chart-bar--horizontal">
+          <div className="chart-bar__inner">
+            <div
+              className="chart-bar__fill chart-bar__fill--horizontal"
+              style={{ width: chartWidth }}
+            ></div>
+          </div>
+        </div>
+        <p>Tag: {props.tag}</p>
+        <button onClick={showExpenseHandler}>Show</button>
       </div>
-      <p>Tag: {props.tag}</p>
-    </div>
+    
   );
 };
 

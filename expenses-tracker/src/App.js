@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Navigation/Naviagtion";
 import Budgets from "./components/Budgets/Budgets";
 import NewBudgets from "./components/NewBudgets/NewBudgets";
+import ExpensesListOfTag from "./components/Expenses/ExpensesListOfTag";
 import React, { useState } from "react";
 
 const DUMMY_DATA = [
@@ -99,6 +100,7 @@ function App() {
   const [budgets, addBudgets] = useState([
     { id: "123ed", title: "Total expenses", amount: 0, tag: "" },
   ]);
+  const [tag, selectTag] = useState("");
 
   const addExpenseHandler = (newExpenseData) => {
     setExpense((prevExpense) => {
@@ -113,8 +115,12 @@ function App() {
 
   const addBudgetsHandler = (theNewBudgets) => {
     addBudgets((prevBudgets) => {
-      return [ ...budgets, theNewBudgets,];
+      return [...budgets, theNewBudgets];
     });
+  };
+
+  const showExpensFromTagHandler = (tag) => {
+    selectTag(tag);
   };
 
   //Budgets
@@ -124,8 +130,12 @@ function App() {
         <Navigation changeView={changeMainViewHandler}></Navigation>
         <h1>Budgets</h1>
         <NewBudgets newBudgetHandler={addBudgetsHandler}></NewBudgets>
-        <Budgets budgets={budgets} expenses={expense}></Budgets>
-        
+        <Budgets
+          budgets={budgets}
+          expenses={expense}
+          show={showExpensFromTagHandler}
+        ></Budgets>
+        <ExpensesListOfTag items={expense} tag={tag}></ExpensesListOfTag>
         <Footer></Footer>
       </div>
     );
@@ -150,7 +160,7 @@ function App() {
       <div className="App">
         <Navigation changeView={changeMainViewHandler}></Navigation>
         <h1>Statistik</h1>
-        
+
         <Footer></Footer>
       </div>
     );
