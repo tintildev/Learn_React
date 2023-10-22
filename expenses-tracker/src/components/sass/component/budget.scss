@@ -8,6 +8,25 @@
         align-items: center;
         justify-content: space-around;
     }
+
+    &__button{
+        background-color: transparent;
+        color: var(--color-white);
+        border: solid 2px var(--color-primary);
+        border-radius: 0;
+        font-size: var(--small-font-size);
+        text-transform: uppercase;
+        margin: 0.2rem;
+        align-self: start;
+        justify-self: start;
+        cursor: pointer;
+        animation: moveInBottom .5s ease-out .5s both;
+
+        &:hover{
+            background-color: var(--color-secondary);
+            color: var(--white);
+        }
+      }
 }
 
 .divBudget{

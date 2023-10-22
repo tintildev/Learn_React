@@ -32,7 +32,7 @@ function Expenses(props) {
     <Card className="expenses">
       <ExpenseFilter selected={selectedData} filterData={onSelectFilterDataHandler} items={props.items} />
       <ExpensesChart expenses={filterExpensesArray} />
-      <ExpensesList items={filterExpensesArray} />
+      <ExpensesList items={filterExpensesArray} delete={props.delete} />
     </Card>
   );
 }

@@ -64,7 +64,7 @@ const DUMMY_DATA = [
     title: "Geschenk",
     amount: 25,
     tag: "friends",
-    date: new Date(2021, 3, 23),
+    date: new Date(2021, 3, 25),
   },
   {
     id: "e8",
@@ -98,7 +98,8 @@ function App() {
   const [expense, setExpense] = useState(DUMMY_DATA);
   const [mainView, changeMainView] = useState(1);
   const [budgets, addBudgets] = useState([
-    { id: "123ed", title: "Total expenses", amount: 0, tag: "" },
+    { id: "bu1", title: "Total expenses", amount: 0, tag: "" },
+    { id: "bu2", title: "Food and Drink", amount: 350, tag: "food" },
   ]);
   const [tag, selectTag] = useState("");
 
@@ -123,6 +124,12 @@ function App() {
     selectTag(tag);
   };
 
+  const deleteById = (id) => {
+    setExpense((oldValues) => {
+      return oldValues.filter((expense) => expense.id !== id);
+    });
+  };
+
   //Budgets
   if (mainView === 1) {
     return (
@@ -135,7 +142,11 @@ function App() {
           expenses={expense}
           show={showExpensFromTagHandler}
         ></Budgets>
-        <ExpensesListOfTag items={expense} tag={tag}></ExpensesListOfTag>
+        <ExpensesListOfTag
+          items={expense}
+          tag={tag}
+          delete={deleteById}
+        ></ExpensesListOfTag>
         <Footer></Footer>
       </div>
     );
@@ -148,7 +159,7 @@ function App() {
         <Navigation changeView={changeMainViewHandler}></Navigation>
         <h1>Expense</h1>
         <NewExpense onNewExpenses={addExpenseHandler} />
-        <Expenses items={expense}></Expenses>
+        <Expenses items={expense} delete={deleteById}></Expenses>
         <Footer></Footer>
       </div>
     );
