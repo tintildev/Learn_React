@@ -12,7 +12,7 @@ const ExpenseFilter = (props) => {
   let theYears = [...new Set(propsYears)]
   //sorts the elemtes
   theYears.sort();
-  console.log(theYears);
+
 
   return (
     <div className="expenses-filter">

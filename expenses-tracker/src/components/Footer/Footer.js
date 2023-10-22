@@ -4,10 +4,18 @@ import FooterNav from "./FooterNav";
 
 const Footer = (props) => {
   const footerData = [
-    { name: "Github", link: "https://github.com/mklestil" },
-    { name: "Linkedin", link: "https://www.linkedin.com/in/martin-klestil/" },
-    { name: "Dev.to", link: "https://dev.to/mklestil" },
-    { name: "Xing", link: "https://www.xing.com/profile/Martin_Klestil2" },
+    { id: "l1", name: "Github", link: "https://github.com/mklestil" },
+    {
+      id: "l2",
+      name: "Linkedin",
+      link: "https://www.linkedin.com/in/martin-klestil/",
+    },
+    { id: "l3", name: "Dev.to", link: "https://dev.to/mklestil" },
+    {
+      id: "l4",
+      name: "Xing",
+      link: "https://www.xing.com/profile/Martin_Klestil2",
+    },
   ];
 
   return (

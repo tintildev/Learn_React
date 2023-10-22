@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../sass/component/NewExpense.scss";
+import "../sass/component/NewForm.scss";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
@@ -24,15 +24,15 @@ const NewExpense = (props) => {
 
   if (newExpensesForm === true) {
     return (
-      <div className="new-expense">
+      <div className="new-form">
         <ExpenseForm onSaveExpenseData={saveExpenseData} onCancle={cancleHandler} />
       </div>
     );
   }
 
   return (
-    <div className="new-expense">
-      <button className="new-expense__button" onClick={addNewExpensesHandler}>Add Expenses</button>
+    <div className="new-form">
+      <button className="new-form__button" onClick={addNewExpensesHandler}>Add Expenses</button>
     </div>
   );
 };

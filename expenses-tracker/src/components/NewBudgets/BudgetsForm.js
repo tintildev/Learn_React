@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../sass/component/NewExpense.scss";
+import "../sass/component/NewForm.scss";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -15,7 +15,7 @@ const ExpenseForm = (props) => {
   };
 
   const tagChangeHandler = (event) => {
-    setEnteredTag(event.target.tag);
+    setEnteredTag(event.target.value);
   };
 
   const submitHandler = (event) => {
@@ -24,7 +24,7 @@ const ExpenseForm = (props) => {
     const expenseData = {
       title: enteredTitle,
       amount: +enteredAmount,
-      tag: enteredTag,
+      tag: enteredTag
     };
 
     props.onSaveExpenseData(expenseData);
@@ -34,9 +34,9 @@ const ExpenseForm = (props) => {
   };
 
   return (
-    <form className="new-expense__form" onSubmit={submitHandler}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
+    <form className="new-form__form" onSubmit={submitHandler}>
+      <div className="new-form__controls">
+        <div className="new-form__control">
           <label>Title</label>
           <input
             type="text"
@@ -46,7 +46,7 @@ const ExpenseForm = (props) => {
             autofocus
           />
         </div>
-        <div className="new-expense__control">
+        <div className="new-form__control">
           <label>Amount</label>
           <input
             type="number"
@@ -57,21 +57,21 @@ const ExpenseForm = (props) => {
             required
           />
         </div>
-        <div className="new-expense__control">
+        <div className="new-form__control">
           <label>Tag</label>
           <input
-            type="Text"
+            type="text"
             value={enteredTag}
             onChange={tagChangeHandler}
             required
           />
         </div>
         
-        <div className="new-expense__actions">
-          <button type="button" className="new-expense__button" onClick={props.onCancle}>
+        <div className="new-form__actions">
+          <button type="button" className="new-form__button" onClick={props.onCancle}>
             Cancle
           </button>
-          <button type="submit" className="new-expense__button">
+          <button type="submit" className="new-form__button">
             Add Budgets
           </button>
         </div>

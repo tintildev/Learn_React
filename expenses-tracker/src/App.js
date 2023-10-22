@@ -4,8 +4,8 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Footer from "./components/Footer/Footer";
 import Navigation from "./components/Navigation/Naviagtion";
+import Budgets from "./components/Budgets/Budgets";
 import React, { useState } from "react";
-
 
 const DUMMY_DATA = [
   {
@@ -94,6 +94,7 @@ const DUMMY_DATA = [
 
 function App() {
   const [expense, setExpense] = useState(DUMMY_DATA);
+  const [mainView, changeMainView] = useState(1);
 
   const addExpenseHandler = (newExpenseData) => {
     setExpense((prevExpense) => {
@@ -101,16 +102,60 @@ function App() {
     });
   };
 
-  return (
-    <div className="App">
-      <Navigation></Navigation>
-      <h1>Hello World</h1>
-      <h2>This is my first expense tracker with React.</h2>
-      <NewExpense onNewExpenses={addExpenseHandler} />
-      <Expenses items={expense}></Expenses>
-      <Footer></Footer>
-    </div>
-  );
+  const changeMainViewHandler = (value) => {
+    changeMainView(value);
+    console.log(value);
+  };
+
+  //Budgets
+  if (mainView === 1) {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Budgets</h1>
+        
+        <Budgets></Budgets>
+        
+        <Footer></Footer>
+      </div>
+    );
+  }
+
+  //Expense
+  if (mainView === 2) {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Expense</h1>
+        <NewExpense onNewExpenses={addExpenseHandler} />
+        <Expenses items={expense}></Expenses>
+        <Footer></Footer>
+      </div>
+    );
+  }
+
+  //Statistik
+  if (mainView === 3) {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Statistik</h1>
+        
+        <Footer></Footer>
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Hello World</h1>
+        <h2>This is my first expense tracker with React.</h2>
+        <NewExpense onNewExpenses={addExpenseHandler} />
+        <Expenses items={expense}></Expenses>
+        <Footer></Footer>
+      </div>
+    );
+  }
 }
 
 export default App;

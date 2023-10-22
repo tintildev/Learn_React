@@ -8,6 +8,7 @@ const FooterNav = (props) => {
     <ul className="nav footer__nav">
       {props.items.map((item) => (
         <FooterNavItem
+          key={item.id}
           name={item.name}
           link={item.link}
         />

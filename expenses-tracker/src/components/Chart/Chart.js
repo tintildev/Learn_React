@@ -1,7 +1,7 @@
 import React from "react";
 
 import ChartBar from "./ChartBar";
-import "../sass/component/Chart.scss";
+import "../sass/component/chart.scss";
 
 const Chart = (props) => {
   //Helper Array, Array of Numbers
