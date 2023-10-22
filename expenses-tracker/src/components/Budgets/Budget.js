@@ -3,7 +3,16 @@ import "../sass/component/budget.scss";
 
 const Budget = (props) => {
   let chartWidth = "0%";
-  chartWidth = props.amount;
+ 
+
+  let total = 0;
+  props.expenses.map((data) => {
+    if(props.tag === data.tag){
+      total += data.amount;
+    }
+  })
+
+  chartWidth = total;
 
   return (
     <div className="budget">
