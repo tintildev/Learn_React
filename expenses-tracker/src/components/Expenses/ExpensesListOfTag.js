@@ -9,13 +9,11 @@ const ExpensesListOfTag = (props) => {
   }
 
   let filterData = [];
-  if (props.tag === "") {
-    filterData = props.items;
-  } else {
+  
     filterData = props.items.filter((expense) => {
       return expense.tag === props.tag;
     });
-  }
+  
 
   return (
     <ul className="expenses-list">
