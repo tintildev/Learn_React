@@ -96,7 +96,7 @@ const DUMMY_DATA = [
 
 function App() {
   const [expense, setExpense] = useState(DUMMY_DATA);
-  const [mainView, changeMainView] = useState(1);
+  const [mainView, changeMainView] = useState(0);
   const [budgets, addBudgets] = useState([
     { id: "bu1", title: "Total expenses", amount: 0, tag: "" },
     { id: "bu2", title: "Food and Drink", amount: 350, tag: "food" },
@@ -182,7 +182,7 @@ function App() {
         <h1>Hello World</h1>
         <h2>This is my first expense tracker with React.</h2>
         <NewExpense onNewExpenses={addExpenseHandler} />
-        <Expenses items={expense}></Expenses>
+        <Expenses items={expense} delete={deleteById}></Expenses>
         <Footer></Footer>
       </div>
     );

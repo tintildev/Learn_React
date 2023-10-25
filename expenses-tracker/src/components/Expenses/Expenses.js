@@ -13,10 +13,7 @@ function Expenses(props) {
   const onSelectFilterDataHandler = (eventData) => {
     setSelectedData(eventData);
   };
-
   
-  
-
   //Sort Array
   const sortArray = props.items.sort(function(a,b){
     // Turn your strings into dates, and then subtract them
