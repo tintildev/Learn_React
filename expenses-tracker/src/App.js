@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation/Naviagtion";
 import Budgets from "./components/Budgets/Budgets";
 import NewBudgets from "./components/NewBudgets/NewBudgets";
 import ExpensesListOfTag from "./components/Expenses/ExpensesListOfTag";
+import Statistik from "./components/Statistik/Statistik";
 import React, { useState } from "react";
 
 const DUMMY_DATA = [
@@ -171,7 +172,7 @@ function App() {
       <div className="App">
         <Navigation changeView={changeMainViewHandler}></Navigation>
         <h1>Statistik</h1>
-
+        <Statistik items={expense} delete={deleteById}></Statistik>
         <Footer></Footer>
       </div>
     );

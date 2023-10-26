@@ -7,29 +7,44 @@ import ExpensesChart from "./ExpensesChart";
 
 // State Selected Date
 function Expenses(props) {
-  const [selectedData, setSelectedData] = useState("2020");
+  const [selectedYear, setYear] = useState("2020");
+  const [selectedMonth, setMonth] = useState("Jan");
 
   // Change Methode Selected Date and write into State
-  const onSelectFilterDataHandler = (eventData) => {
-    setSelectedData(eventData);
+  const onSelectFilterYearHandler = (eventData) => {
+    setYear(eventData);
   };
-  
+
+  const onSelectFilterMonthHandler = (eventData) => {
+    setMonth(eventData);
+  };
+
   //Sort Array
-  const sortArray = props.items.sort(function(a,b){
+  const sortArray = props.items.sort(function (a, b) {
     // Turn your strings into dates, and then subtract them
     // to get a value that is either negative, positive, or zero.
-    return new Date(b.date) - new Date(a.date);});
+    return new Date(b.date) - new Date(a.date);
+  });
 
-    // Filter Expenses
-  const filterExpensesArray = sortArray.filter((expense) => {
-    return expense.date.getFullYear().toString() === selectedData;
+  // Filter Expenses
+  let filterExpenses = sortArray.filter((expense) => {
+    return expense.date.getFullYear().toString() === selectedYear;
+  });
+
+  filterExpenses = sortArray.filter((expense) => {
+    return expense.date.getMonth().toString() === selectedMonth;
   });
 
   return (
     <Card className="expenses">
-      <ExpenseFilter selected={selectedData} filterData={onSelectFilterDataHandler} items={props.items} />
-      <ExpensesChart expenses={filterExpensesArray} />
-      <ExpensesList items={filterExpensesArray} delete={props.delete} />
+      <ExpenseFilter
+        selectedYear={selectedYear}
+        selectedMonth={selectedMonth}
+        filterYear={onSelectFilterYearHandler}
+        filterMonth={onSelectFilterMonthHandler}
+        items={props.items}
+      />
+      <ExpensesList items={filterExpenses} delete={props.delete} />
     </Card>
   );
 }
