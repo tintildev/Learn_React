@@ -1,5 +1,5 @@
 import React from "react";
-import "../sass/component/ExpensesFilter.scss";
+import "../sass/component/expensesFilter.scss";
 
 const ExpenseFilter = (props) => {
   const onSelectHandlerYear = (event) => {
