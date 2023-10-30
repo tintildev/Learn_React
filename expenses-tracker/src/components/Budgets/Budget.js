@@ -37,7 +37,7 @@ const Budget = (props) => {
           </div>
         </div>
         <p>Tag: {props.tag}</p>
-        <button className="budget__button" onClick={showExpenseHandler}>Show</button>
+        <button className="budget__button" onClick={showExpenseHandler}>Show Expenses</button>
       </div>
     
   );

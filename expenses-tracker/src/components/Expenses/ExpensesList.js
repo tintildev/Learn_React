@@ -1,5 +1,5 @@
 import React from "react";
-import "../sass/component/ExpensesList.scss";
+import "../sass/component/expensesList.scss";
 import ExpenseItem from "./ExpenseItem";
 
 const ExpensesList = (props) => {

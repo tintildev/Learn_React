@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../sass/component/NewForm.scss";
+import "../sass/component/newForm.scss";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
