@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../sass/component/Chart.scss";
+import "../sass/component/chart.scss";
 
 //props from chart= key, label, value, maxValue
 

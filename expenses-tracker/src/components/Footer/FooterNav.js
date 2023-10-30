@@ -1,5 +1,5 @@
 import React from "react";
-import "../sass/component/Footer.scss";
+import "../sass/component/footer.scss";
 import FooterNavItem from "./FooterNavItem";
 
 const FooterNav = (props) => {
@@ -8,6 +8,7 @@ const FooterNav = (props) => {
     <ul className="nav footer__nav">
       {props.items.map((item) => (
         <FooterNavItem
+          key={item.id}
           name={item.name}
           link={item.link}
         />

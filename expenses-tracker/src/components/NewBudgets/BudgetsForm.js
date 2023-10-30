@@ -5,7 +5,6 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredTag, setEnteredTag] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -19,25 +18,18 @@ const ExpenseForm = (props) => {
     setEnteredTag(event.target.value);
   };
 
-  const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
-    console.log(enteredDate);
-  };
-
   const submitHandler = (event) => {
     event.preventDefault();
 
     const expenseData = {
       title: enteredTitle,
       amount: +enteredAmount,
-      tag: enteredTag,
-      date: new Date(enteredDate),
+      tag: enteredTag
     };
 
     props.onSaveExpenseData(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
-    setEnteredDate('');
     setEnteredTag('');
   };
 
@@ -74,24 +66,13 @@ const ExpenseForm = (props) => {
             required
           />
         </div>
-        <div className="new-form__control">
-          <label>Date</label>
-          <input
-            type="date"
-            min="2019-01-01"
-            //max="2022-12-31"
-            value={enteredDate}
-            onChange={dateChangeHandler}
-            required
-          />
-        </div>
         
         <div className="new-form__actions">
           <button type="button" className="new-form__button" onClick={props.onCancle}>
             Cancle
           </button>
           <button type="submit" className="new-form__button">
-            Add Expense
+            Add Budgets
           </button>
         </div>
       </div>

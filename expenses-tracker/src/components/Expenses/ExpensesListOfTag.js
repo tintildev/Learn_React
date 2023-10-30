@@ -2,17 +2,22 @@ import React from "react";
 import "../sass/component/ExpensesList.scss";
 import ExpenseItem from "./ExpenseItem";
 
-const ExpensesList = (props) => {
+const ExpensesListOfTag = (props) => {
   //Conditional return Content if data is available, or not.
   if (props.items.length === 0) {
-    return (
-      <h2 className="expenses-list__fallback">Found no expenses</h2>
-    )
+    return <p></p>;
   }
+
+  let filterData = [];
+  
+    filterData = props.items.filter((expense) => {
+      return expense.tag === props.tag;
+    });
+  
 
   return (
     <ul className="expenses-list">
-      {props.items.map((expense) => (
+      {filterData.map((expense) => (
         <ExpenseItem
           key={expense.id}
           id={expense.id}
@@ -27,4 +32,4 @@ const ExpensesList = (props) => {
   );
 }; //ende ExpensesList
 
-export default ExpensesList;
+export default ExpensesListOfTag;

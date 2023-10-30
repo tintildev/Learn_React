@@ -3,8 +3,12 @@ import "./components/sass/base/base.scss";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Footer from "./components/Footer/Footer";
+import Navigation from "./components/Navigation/Naviagtion";
+import Budgets from "./components/Budgets/Budgets";
+import NewBudgets from "./components/NewBudgets/NewBudgets";
+import ExpensesListOfTag from "./components/Expenses/ExpensesListOfTag";
+import Statistik from "./components/Statistik/Statistik";
 import React, { useState } from "react";
-
 
 const DUMMY_DATA = [
   {
@@ -61,7 +65,7 @@ const DUMMY_DATA = [
     title: "Geschenk",
     amount: 25,
     tag: "friends",
-    date: new Date(2021, 3, 23),
+    date: new Date(2021, 3, 25),
   },
   {
     id: "e8",
@@ -93,6 +97,12 @@ const DUMMY_DATA = [
 
 function App() {
   const [expense, setExpense] = useState(DUMMY_DATA);
+  const [mainView, changeMainView] = useState(0);
+  const [budgets, addBudgets] = useState([
+    { id: "bu1", title: "Total expenses", amount: 0, tag: "" },
+    { id: "bu2", title: "Food and Drink", amount: 350, tag: "food" },
+  ]);
+  const [tag, selectTag] = useState("");
 
   const addExpenseHandler = (newExpenseData) => {
     setExpense((prevExpense) => {
@@ -100,15 +110,84 @@ function App() {
     });
   };
 
-  return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <h2>This is my first expense tracker with React.</h2>
-      <NewExpense onNewExpenses={addExpenseHandler} />
-      <Expenses items={expense}></Expenses>
-      <Footer></Footer>
-    </div>
-  );
+  const changeMainViewHandler = (value) => {
+    changeMainView(value);
+    console.log(value);
+  };
+
+  const addBudgetsHandler = (theNewBudgets) => {
+    addBudgets((prevBudgets) => {
+      return [...budgets, theNewBudgets];
+    });
+  };
+
+  const showExpensFromTagHandler = (tag) => {
+    selectTag(tag);
+  };
+
+  const deleteById = (id) => {
+    setExpense((oldValues) => {
+      return oldValues.filter((expense) => expense.id !== id);
+    });
+  };
+
+  //Budgets
+  if (mainView === 1) {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Budgets</h1>
+        <NewBudgets newBudgetHandler={addBudgetsHandler}></NewBudgets>
+        <Budgets
+          budgets={budgets}
+          expenses={expense}
+          show={showExpensFromTagHandler}
+        ></Budgets>
+        <ExpensesListOfTag
+          items={expense}
+          tag={tag}
+          delete={deleteById}
+        ></ExpensesListOfTag>
+        <Footer></Footer>
+      </div>
+    );
+  }
+
+  //Expense
+  if (mainView === 2) {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Expense</h1>
+        <NewExpense onNewExpenses={addExpenseHandler} />
+        <Expenses items={expense} delete={deleteById}></Expenses>
+        <Footer></Footer>
+      </div>
+    );
+  }
+
+  //Statistik
+  if (mainView === 3) {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Statistik</h1>
+        <Statistik items={expense} delete={deleteById}></Statistik>
+        <Footer></Footer>
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <Navigation changeView={changeMainViewHandler}></Navigation>
+        <h1>Hello World</h1>
+        <h2>This is my first expense tracker with React.</h2>
+        <NewExpense onNewExpenses={addExpenseHandler} />
+        <Expenses items={expense} delete={deleteById}></Expenses>
+        <Footer></Footer>
+      </div>
+    );
+  }
 }
 
 export default App;

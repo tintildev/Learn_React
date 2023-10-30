@@ -22,18 +22,7 @@ const ExpenseFilter = (props) => {
   return (
     <div className="expenses-filter">
       <label>Filter by </label>
-      <div className="expenses-filter__container">
-        <label>Month:</label>
-        <select
-          value={props.selectedMonth}
-          className="expenses-filter__control"
-          onChange={onSelectHandlerMonth}
-        >
-          {props.theMonth.map((item) => {
-            return <option value={item}>{item}</option>;
-          })}
-        </select>
-      </div>
+      
       <div className="expenses-filter__container">
         <label>Year:</label>
         <select

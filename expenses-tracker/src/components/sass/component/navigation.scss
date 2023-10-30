@@ -1,0 +1,38 @@
+.navigation {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--white);
+  padding-top: 1rem;
+}
+
+
+.nav{
+  &--name{
+    color: var(--white);
+    
+  }
+  &--item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &--link{
+    &:link{
+      color: var(--white);
+    }
+
+    &:visited{
+      color: var(--white);
+    }
+  }
+}
+
+.LogoNav{
+  height: 60px;
+  width: auto;
+}
