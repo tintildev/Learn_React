@@ -1,5 +1,5 @@
 # Learn_React
-My repository to learn React. To learn React I use the Reactjs documentation, Udemy courses and try to implement my own projects.
+This repository is part of my journey to learn React. I’m using the official React documentation, online courses, and personal projects to deepen my understanding.
 
 
 ## Overview
@@ -12,20 +12,25 @@ My repository to learn React. To learn React I use the Reactjs documentation, Ud
 
 - [Author](#author)
 
-### Goals
+### 🎯 Goals
 - Learn React
+- Learn and understand the fundamentals of React
+- Practice by building real-world projects
+- Gain hands-on experience with related tools and libraries (e.g., Redux, React Router, Hooks)
 
-### Needs
-- Editor 
-- Browser
-- nodejs
+### ⚙️ Requirements
+To follow along or contribute, you will need:
+
+- A code editor (e.g., VS Code)
+- A modern web browser
+- Node.js installed on your machine
 
 ### Projects
 - [Add React](https://github.com/mklestil/Learn_React/tree/master/start-react)
 
 
-### Resources
-I am learning React with the following course and documentation.
+### 📚 Resources
+I'm currently learning React through the following resources:
 - React [Dokumentation](https://reactjs.org/docs/getting-started.html)
 - Udemy course: [Dein Einstieg in React JS & Redux](https://www.udemy.com/course/einstieg-in-react-und-redux/)
 - Udemy course: [React - The Complete Guide (incl Hooks, React Router, Redux)
