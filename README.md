@@ -37,6 +37,11 @@ I'm currently learning React through the following resources:
 ](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
 
-## Author
-- Website - [Martin Klestil](https://github.com/mklestil)
-- Twitter - [@mklestil](https://twitter.com/MKlestil)
+
+## Author TintilDev
+- Website - [TintilDev](https://github.com/tintildev)
+- Frontend Mentor - [Tintildev](https://www.frontendmentor.io/profile/tintildev)
+- Bluesky - [@tintildev‬](https://bsky.app/profile/tintildev.bsky.social)
+- LinkedIn - [Martin Klestil](https://www.linkedin.com/in/martin-klestil/)
+- Dev.to [TintilDev](https://dev.to/tintildev)
+
